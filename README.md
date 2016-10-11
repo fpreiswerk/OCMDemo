@@ -11,7 +11,7 @@ If you have already installed Julia version 0.5 or higher, you can skip the
 first step.
 
 ## Install Julia
-You can downlaod a version of Julia for your operating system from the
+You can downoaad a version of Julia for your operating system from the
 [Julia website](http://julialang.org/downloads), or use your system's package
 manager. For example, on MacOS with [Homebrew](http://brew.sh) installed, you
 can type
@@ -41,9 +41,11 @@ from the REPL,
 include(joinpath(Pkg.dir("OCMDemo"),"examples","download_data.jl"))
 ```
 
-The data is ~600MB, so this might take a while. When it's done, you can take a
-look at the example script `run.jl`. It is located in the same folder as above,
-so typing
+The data is ~400MB, so this might take a while. 
+
+## Playing around
+When the sample data is downloaded, you can take a look at the example script 
+`run.jl`. It is located in the same folder as above, so typing
 
 ```julia
 joinpath(Pkg.dir("OCMDemo"),"examples","run.jl")
@@ -56,14 +58,15 @@ paper. You can run any of them by changing the value of the `experiment_file`
 variable.
 
 The script will produce an m-mode visualization, similar to Figure 5 in the
-paper.
+paper. The result will be saved as an image, and should automatically open
+using your system's default image viewer.
 
 ## Optimization and parallel processing
 
 The code is optimized for speed, essentially through in-place processing using
 pre-allocated buffers and Julia's `broadcast` function, as well as `@fastmath`
 and `@simd`. Using Julias's built in support for parallelism through `@parallel`
-however caused more overhead, at least on the Julia versions I've tried.Still,
+however caused more overhead, at least on the Julia versions I've tried. Still,
 you can play around with it by inserting
 
 ```julia
