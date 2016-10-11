@@ -98,7 +98,7 @@ This work was performed with the following co-authors:
 
 - Matthew Toews, École de technologie supérieure, Montreal
 - Cheng-Chieh Cheng, Brigham and Women's Hospital, Harvard Medical School, Boston
-- Jr-yuan George Chiou, righam and Women's Hospital, Harvard Medical School, Boston
+- Jr-yuan George Chiou, Brigham and Women's Hospital, Harvard Medical School, Boston
 - Chang-Sheng Mei, Soochow University, Taipei
 - Lena F. Schaefer, Brigham and Women's Hospital, Harvard Medical School, Boston
 - W. Scott Hoge, Brigham and Women's Hospital, Harvard Medical School, Boston
