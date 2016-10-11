@@ -1,12 +1,10 @@
 # OCMDemo.jl
-
 This is demo code for the paper
 
 *F. Preiswerk et al., “Hybrid MRI-ultrasound acquisitions, and scannerless
 real-time imaging,” Magnetic Resonance in Medicine, in press.*
 
 ## How to use
-
 If you have already installed Julia version 0.5 or higher, you can skip the
 first step.
 
@@ -30,6 +28,16 @@ typing
 
 ```julia
 Pkg.clone("https://github.com/fpreiswerk/OCMDemo")
+```
+
+You should see something like this, which means that installation was
+successful,
+
+```julia
+julia> Pkg.clone("https://github.com/fpreiswerk/OCMDemo.git")
+INFO: Cloning OCMDemo from https://github.com/fpreiswerk/OCMDemo.git
+INFO: Computing changes...
+INFO: No packages to install, update or remove
 ```
 
 ## Download the sample data
