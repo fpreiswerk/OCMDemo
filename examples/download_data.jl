@@ -1,21 +1,22 @@
 cdir = pwd()
-println("foo")
-exit()
 tmpdir = joinpath(Pkg.dir("OCMDemo"),"tmp")
-mkdir(tmpdir)
+if cdir == tmpdir
+  cdir = joinpath(Pkg.dir("OCMDemo"))
+end
+isdir(tmpdir) || mkdir(tmpdir)
 cd(tmpdir)
 println("Downloading sample data... ")
 try
-  download("https://github.com/fpreiswerk/OCMExampleData/archive/master.zip",
-    "./data.zip")
+  download("https://www.dropbox.com/s/slkmlm3r3ummooa/OCMExampleData.tar.gz?dl=1",
+    "./data.tar.gz")
   println("\nUnpacking data... ")
-  run(`unzip -oq ./data.zip -d ./`)
+  run(`tar -zxvf ./data.tar.gz`)
 catch
-  error("unzip or download failed.")
+  error("download or file extraction failed.")
 end
-mv(joinpath("./OCMExampleData","datasets"),"../")
-mv(joinpath("./OCMExampleData","experiments"),"../")
-cd("Pkg.dir("OCMDemo")")
+mv(joinpath("./OCMExampleData","datasets"),"../datasets",remove_destination=true)
+mv(joinpath("./OCMExampleData","experiments"),"../experiments",remove_destination=true)
+cd("../")
 rm("tmp",recursive=true)
 cd(cdir)
 println("done.\n")
