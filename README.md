@@ -91,7 +91,7 @@ you are having problems using the code or if you have questions or comments.
 ## Credits
 This work was performed with the following co-authors:
 
-- Matthew Toews, Ecole de Technologie Superieure, Montreal
+- Matthew Toews, École de technologie supérieure
 - Cheng-Chieh Cheng, Brigham and Women's Hospital, Harvard Medical School, Boston
 - Jr-yuan George Chiou, righam and Women's Hospital, Harvard Medical School, Boston
 - Chang-Sheng Mei, Soochow University, Taipei
