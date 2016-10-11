@@ -41,10 +41,10 @@ from the REPL,
 include(joinpath(Pkg.dir("OCMDemo"),"examples","download_data.jl"))
 ```
 
-The data is ~400MB, so this might take a while. 
+The data is ~400MB, so this might take a while.
 
 ## Playing around
-When the sample data is downloaded, you can take a look at the example script 
+When the sample data is downloaded, you can take a look at the example script
 `run.jl`. It is located in the same folder as above, so typing
 
 ```julia
@@ -62,7 +62,6 @@ paper. The result will be saved as an image, and should automatically open
 using your system's default image viewer.
 
 ## Optimization and parallel processing
-
 The code is optimized for speed, essentially through in-place processing using
 pre-allocated buffers and Julia's `broadcast` function, as well as `@fastmath`
 and `@simd`. Using Julias's built in support for parallelism through `@parallel`
@@ -78,10 +77,26 @@ at the beginning of `run.jl` (after `using OCMDemo`). This will parallelize the
 reconstruction of each plane (here 2).
 
 ## Cleaning up
-
 To uninstall the package, as well as delete the downloaded sample data, simply
 type
 
 ```julia
 Pkg.rm("OCMDemo")
 ```
+
+## Problems or questions
+Please don't hesitate to contact me via [email](mailto:frank@bwh.harvard.edu) if
+you are having problems using the code or if you have questions or comments.
+
+## Credits
+This work was performed with the following co-authors:
+
+- Matthew Toews, Ecole de Technologie Superieure, Montreal
+- Cheng-Chieh Cheng, Brigham and Women's Hospital, Harvard Medical School, Boston
+- Jr-yuan George Chiou, righam and Women's Hospital, Harvard Medical School, Boston
+- Chang-Sheng Mei, Soochow University, Taipei
+- Lena F. Schaefer, Brigham and Women's Hospital, Harvard Medical School, Boston
+- W. Scott Hoge, Brigham and Women's Hospital, Harvard Medical School, Boston
+- Benjamin M. Schwartz, Google Inc., New York
+- Lawrence P. Panych, Brigham and Women's Hospital, Harvard Medical School, Boston
+- Bruno Madore, Brigham and Women's Hospital, Harvard Medical School, Boston
