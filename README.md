@@ -59,7 +59,7 @@ edit(joinpath(Pkg.dir("OCMDemo"),"examples","run.jl"))
 ```
 
 All experiments are defined in XML files: Three experiment definitions are
-available, `A1.xml`, `B2.xml` and `H1.xml`, respectively, corresponding to acquisitions used in the paper. You can run any of them by changing the value
+available, `A1.xml`, `B2.xml` and `H2.xml`, respectively, corresponding to acquisitions used in the paper. You can run any of them by changing the value
 of the `experiment_file` variable.
 
 The script will produce an m-mode visualization, similar to Figure 5 in the
