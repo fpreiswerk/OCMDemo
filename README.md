@@ -51,11 +51,15 @@ When the sample data is downloaded, you can take a look at the example script
 joinpath(Pkg.dir("OCMDemo"),"examples","run.jl")
 ```
 
-in the REPL will reveal its location. Open it and play around. All experiments
-are defined in XML files: Three experiment definitions are available, `A1.xml`,
-`B2.xml` and `H1.xml`, respectively, corresponding to acquisitions used in the
-paper. You can run any of them by changing the value of the `experiment_file`
-variable.
+in the REPL will reveal its location. Open it and play around, e.g. using
+
+```julia
+edit(joinpath(Pkg.dir("OCMDemo"),"examples","run.jl"))
+```
+
+All experiments are defined in XML files: Three experiment definitions are
+available, `A1.xml`, `B2.xml` and `H1.xml`, respectively, corresponding to acquisitions used in the paper. You can run any of them by changing the value
+of the `experiment_file` variable.
 
 The script will produce an m-mode visualization, similar to Figure 5 in the
 paper. The result will be saved as an image, and should automatically open
