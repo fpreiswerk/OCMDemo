@@ -30,15 +30,8 @@ typing
 Pkg.clone("https://github.com/fpreiswerk/OCMDemo")
 ```
 
-You should see something like this, which means that installation was
-successful,
-
-```julia
-julia> Pkg.clone("https://github.com/fpreiswerk/OCMDemo.git")
-INFO: Cloning OCMDemo from https://github.com/fpreiswerk/OCMDemo.git
-INFO: Computing changes...
-INFO: No packages to install, update or remove
-```
+This will automatically install the package and all its dependencies. It might
+take a while, especially if you have freshly installed Julia.
 
 ## Download the sample data
 Hybrid OCM-MRI data of three subjects (A, B and H from the paper) were made
