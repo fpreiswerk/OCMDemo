@@ -1,1 +1,13 @@
 julia 0.5
+
+Hwloc
+DistributedArrays
+DSP
+Images
+LightXML
+HDF5
+Images
+ImageView
+QuartzImageIO
+ZipFile
+
