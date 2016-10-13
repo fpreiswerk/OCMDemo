@@ -23,8 +23,7 @@ If installation succeeds, you will be able to start Julia
 line.
 
 ## Install the package
-In the REPL, install this package using Julia's built in package manager by
-typing
+In the REPL, install this package using Julia's built in package manager by typing
 
 ```julia
 Pkg.clone("https://github.com/fpreiswerk/OCMDemo")
@@ -59,8 +58,21 @@ edit(joinpath(Pkg.dir("OCMDemo"),"examples","run.jl"))
 ```
 
 All experiments are defined in XML files: Three experiment definitions are
-available, `A1.xml`, `B2.xml` and `H2.xml`, respectively, corresponding to acquisitions used in the paper. You can run any of them by changing the value
+available, `A1.xml`, `B2.xml` and `H2.xml`, respectively, corresponding to
+acquisitions used in the paper. You can run any of them by changing the value
 of the `experiment_file` variable.
+
+Run the program using the following command,
+
+```julia
+edit(joinpath(Pkg.dir("OCMDemo"),"examples","run.jl"))
+```
+
+or directly from the shell using
+
+```shell
+julia /path/to/run.jl
+```
 
 The script will produce an m-mode visualization, similar to Figure 5 in the
 paper. The result will be saved as an image, and should automatically open
@@ -98,7 +110,7 @@ This work was performed with the following co-authors:
 
 - Matthew Toews, École de technologie supérieure, Montreal
 - Cheng-Chieh Cheng, Brigham and Women's Hospital, Harvard Medical School, Boston
-- Jr-yuan George Chiou, Brigham and Women's Hospital, Harvard Medical School, Boston
+- Jr-yuan George Chiou, righam and Women's Hospital, Harvard Medical School, Boston
 - Chang-Sheng Mei, Soochow University, Taipei
 - Lena F. Schaefer, Brigham and Women's Hospital, Harvard Medical School, Boston
 - W. Scott Hoge, Brigham and Women's Hospital, Harvard Medical School, Boston
