@@ -1,11 +1,13 @@
 function load_datasets_xml(filename::AbstractString)
 
   datasets = Dict{AbstractString,Dataset}()
+  (basedir,fn) = splitdir(filename)
   xdoc = parse_file(filename)
   xroot = LightXML.root(xdoc)
   ces = get_elements_by_tagname(xroot, "dataset")
   for e=ces
-    d = load_dataset_config_xml(attribute(e,"dir"))
+    d = load_dataset_config_xml(
+      joinpath(basedir,attribute(e,"dir")))
     datasets[d.id] = d
   end
   return datasets

@@ -7,7 +7,7 @@ isdir(tmpdir) || mkdir(tmpdir)
 cd(tmpdir)
 println("Downloading sample data... ")
 try
-  download("https://www.dropbox.com/s/slkmlm3r3ummooa/OCMExampleData.tar.gz?dl=1",
+  download("https://www.dropbox.com/s/snlo2jwkw647h7z/OCMExampleData.tar.gz?dl=1",
     "./data.tar.gz")
   println("\nUnpacking data... ")
   run(`tar -zxvf ./data.tar.gz`)
