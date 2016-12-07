@@ -38,15 +38,10 @@ function recon_highspeed_inside(mr_database::Array{Float64,4},
   U_T = zeros(Float64,N_x * N_TR, n_images, n_planes)
 
   # Compute Sigma
-  (Σ,high_variation_inds) = compute_Sigma(U,TR,N_TR,N_x)
-  # TODO: fix name for sigma. is it sigma or sigma_inv???
-  Σ⁻¹ = Σ
-  #@show Σ
-  #Σ⁻¹ = inv(Σ)
+  (Σ⁻¹,high_variation_inds) = compute_Sigma(U,TR,N_TR,N_x)
 
   # Here we vectorize (and replicate) the diagonal matrix Sigma for efficient
   # computation
-  #Σ⁻¹vec  = vec(repmat(diag(Σ⁻¹),N_TR,1))
   Σ⁻¹vec  = vec(repmat(Σ⁻¹,N_TR,1))
 
   U_ = zeros(Float64,length(high_variation_inds),size(U,2))
@@ -78,7 +73,6 @@ function recon_highspeed_inside(mr_database::Array{Float64,4},
 
   # pre-allocation of buffers for optimized computation
   buf_U = OCMDemo.Buffer(N_TR,length(Σ))
-  #buf_I = OCMDemo.Buffer(size(vec(Σ_L⁻¹vec)),size(vec(Σ_L⁻¹vec)))
   buf_I = OCMDemo.Buffer(1,length(vec(Σ_L⁻¹vec)))
 
   # initialize the cough detector
@@ -95,9 +89,6 @@ function recon_highspeed_inside(mr_database::Array{Float64,4},
   for p=1:n_planes
     valid_mri_inds[p] = zeros(Int64,0)
     ids_U_add[p] = zeros(Int64,0)
-
-    #scores_tmp[p] = zeros(Int64,n_planes)
-    #scores_tmp[p] = zeros(Int64,n_planes)
   end
 
   # main loop, for each TR (= OCM time step)
@@ -127,9 +118,7 @@ function recon_highspeed_inside(mr_database::Array{Float64,4},
         # increment the current MR index
         current_MR_ind[p]+=1
 
-        #print("\n$i: acq. of plane $p image $(last_MR_ind[p]) complete, now starting acquisition of image $(current_MR_ind[p])")
         ids_U_add[p] = (mr2us[p,valid_mri_inds[p][end]]-N_TR+1):mr2us[p,valid_mri_inds[p][end]]
-        #print("\nindices $(ids_U_add[p]) should be added to the db now")
       end
     end
 
@@ -193,16 +182,10 @@ function recon_highspeed_inside(mr_database::Array{Float64,4},
       # OCM time when k-space center of this new image was acquired
       this_mr_ind_in_us = mr2us[p,valid_mri_inds[p][end]]
 
-      #@show mr2us[p,current_MR_ind[p]]
-      #@show mr2us[p,last_MR_ind[p]]
-      #this_mr_us_trace_inds = floor(
-      #collect(this_mr_ind_in_us-N_TR+1:subsample_temporal:this_mr_ind_in_us))
       this_mr_us_trace_inds = ids_U_add[p]
       assert(length(this_mr_ind_in_us)>0)
       if minimum(this_mr_us_trace_inds)<1
         # fill up with dummy values where indices could be negative
-        #U_T[:,current_MR_ind[p],p] = 0
-        #U_T[:,last_MR_ind[p],p] = 0
         U_T[:,length(valid_mri_inds[p]),p] = 0 # yyy
       else
         # add all OCM traces corresponding to this MR image to database U_T
@@ -267,7 +250,6 @@ function recon_highspeed_inside(mr_database::Array{Float64,4},
 
     end
 
-    #scores[:,i,:] = 0
     scores[1:K,i,:] = copy(scores_tmp)
     indices[1:K,i,:] = copy(inds_tmp)
 
