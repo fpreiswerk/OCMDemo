@@ -2,7 +2,7 @@
 This is demo code for the paper
 
 *F. Preiswerk et al., “Hybrid MRI-ultrasound acquisitions, and scannerless
-real-time imaging,” Magnetic Resonance in Medicine, in press.*
+real-time imaging,” Magnetic Resonance in Medicine, in press.* [Link to article](http://onlinelibrary.wiley.com/doi/10.1002/mrm.26467/full).
 
 ## How to use
 If you have already installed Julia version 0.5 or higher, you can skip the
