@@ -1,7 +1,7 @@
 # OCMDemo.jl
 This is demo code for the paper
 
-*Preiswerk, Frank, et al. "Hybrid MRI‐Ultrasound acquisitions, and scannerless real‐time imaging." Magnetic Resonance in Medicine (2016).* ([Link to article](http://onlinelibrary.wiley.com/doi/10.1002/mrm.26467/full))
+Preiswerk, Frank, et al. "Hybrid MRI‐Ultrasound acquisitions, and scannerless real‐time imaging." Magnetic Resonance in Medicine (2016). ([Link to article](http://onlinelibrary.wiley.com/doi/10.1002/mrm.26467/full))
 
 ## How to use
 If you have already installed Julia version 0.5 or higher, you can skip the
