@@ -116,5 +116,3 @@ This work was performed with the following co-authors:
 - Benjamin M. Schwartz, Google Inc., New York
 - Lawrence P. Panych, Brigham and Women's Hospital, Harvard Medical School, Boston
 - Bruno Madore, Brigham and Women's Hospital, Harvard Medical School, Boston
-
-test
