@@ -64,7 +64,7 @@ of the `experiment_file` variable.
 Run the program using the following command,
 
 ```julia
-edit(joinpath(Pkg.dir("OCMDemo"),"examples","run.jl"))
+include(joinpath(Pkg.dir("OCMDemo"),"examples","run.jl"))
 ```
 
 or directly from the shell using

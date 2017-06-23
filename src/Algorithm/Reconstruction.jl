@@ -72,7 +72,7 @@ function recon_highspeed_inside(mr_database::Array{Float64,4},
   inds_tmp = zeros(Int64,K,n_planes)
 
   # pre-allocation of buffers for optimized computation
-  buf_U = OCMDemo.Buffer(N_TR,length(Σ))
+  buf_U = OCMDemo.Buffer(N_TR,length(Σ⁻¹))
   buf_I = OCMDemo.Buffer(1,length(vec(Σ_L⁻¹vec)))
 
   # initialize the cough detector
