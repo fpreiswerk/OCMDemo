@@ -24,6 +24,7 @@ module OCMDemo
     load_experiment_xml,
     recon_highspeed_inside,
     render_mmodes,
+    render_corresponding_synthetic,
     init_workers,
     stop_workers
 

@@ -26,7 +26,11 @@ us_data = get_US_data(prediction_acq)
 # render m-mode visualizations of the result
 mmode = render_mmodes(result, mr_database,parameters,experiment)
 
-# save as images
+# you can render the synthetic MR images corresponding to the acquired MR images
+# using this function
+synthetic_imgs_original_speed = render_corresponding_synthetic(result, mr_database, mr2us, experiment)
+
+# save the mmode as images
 save("mmode_sagital.png",colorim(mmode[:,:,:,1]))
 save("mmode_coronal.png",colorim(mmode[:,:,:,2]))
 

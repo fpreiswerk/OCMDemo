@@ -88,3 +88,23 @@ function render_mmodes(rec::Reconstruction, mr_database::Array{Float64,4},
   return mmode
 
 end
+
+function render_corresponding_synthetic(rec::OCMDemo.Reconstruction, mr_database::Array{Float64,4},
+  mr2us::Array{Int64,2}, experiment::Dict{AbstractString,AbstractString})
+
+  images = SharedArray(Float64,size(mr2us,2),size(mr_database,1),size(mr_database,2),2)
+
+  K = parse(Int,experiment["K"])
+
+  for t=1:size(mr2us,2)
+    i_sag = view(rec.indices,:,mr2us[1,t],1:1)
+    w_sag = view(rec.scores,:,mr2us[1,t],1:1)
+    images[t,:,:,1] = render_images(i_sag,w_sag, mr_database, rec.valid_mri_inds, K)
+    i_cor = view(rec.indices,:,mr2us[2,t],2:2)
+    w_cor = view(rec.scores,:,mr2us[2,t],2:2)
+    images[t,:,:,2] = render_images(i_cor,w_cor, mr_database, rec.valid_mri_inds, K)
+  end
+
+  return images
+
+end
