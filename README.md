@@ -3,8 +3,7 @@ This is demo code for the paper
 
 Preiswerk, Frank, et al. [*"Hybrid MRI‐Ultrasound acquisitions, and scannerless real‐time imaging."*](http://onlinelibrary.wiley.com/doi/10.1002/mrm.26467/full) Magnetic Resonance in Medicine (2016).
 
-(Awarded with the [*"2017 Young Investigator Cum Laude Award by the ISMRM."*]
-(https://ncigt.org/news/young-investigator-cum-laude-award-ismrm).)
+(Awarded with the [*"2017 Young Investigator Cum Laude Award by the ISMRM."*](https://ncigt.org/news/young-investigator-cum-laude-award-ismrm).)
 
 ## How to use
 If you have already installed Julia version 0.5 or higher, you can skip the
